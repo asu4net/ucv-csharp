@@ -19,6 +19,7 @@ string playerName = "Pepe";
 Las variables tienen:
 
 ### Tipo
+---
 
 Describe el tipo de valor que almacenan:
 - `int`: Almacena números enteros.
