@@ -17,11 +17,14 @@ string playerName = "Pepe";
 ## Estructura de una variable
 
 Las variables tienen:
-- Tipo: Describe el tipo de valor que almacenan:
-    - `int`: Almacena números enteros.
-    - `float`: Almacena números decimales.
-    - `char`: Almacena un caracter.
-    - `string`: Almacena una colección de caracteres.
-    - `NombreDeUnaClase`: Almacena un puntero/referencia a una instancia de la clase `NombreDeUnaClase`.
+
+### Tipo
+
+Describe el tipo de valor que almacenan:
+- `int`: Almacena números enteros.
+- `float`: Almacena números decimales.
+- `char`: Almacena un caracter.
+- `string`: Almacena una colección de caracteres.
+- `NombreDeUnaClase`: Almacena un puntero/referencia a una instancia de la clase `NombreDeUnaClase`.
 
 > Nota: Más adelante repasaremos que significa lo de las clases.
