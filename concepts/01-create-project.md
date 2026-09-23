@@ -6,7 +6,7 @@ Abre la `búsqueda de Windows` y escribe `cmd`. Después, pulsa `Enter`. Esto de
 
 ## Comprobar si .NET está instalado:
 
-- En la terminal, escribe `dotnet --version`. Esto debería mostrar el número de versión si .NET está instalado.
+- En la terminal, escribe `dotnet --info`. Esto debería mostrar el número de versión si .NET está instalado.
 - Si **NO** está instalado, ejecuta `winget install Microsoft.DotNet.SDK.10`
 - Cierra la terminal y vuelve a abrirla.
 - Repite `dotnet --version` para comprobar que se ha instalado correctamente.
