@@ -32,3 +32,13 @@ Abre la `búsqueda de Windows` y escribe `cmd`. Después, pulsa `Enter`. Esto de
 - *NombreDelProyecto.csproj*: Este es el archivo de proyecto de C#. No se toca. 
 
 ## Compilar el proyecto.
+
+- Escribimos `dotnet run --project RutaALaCarpetaDelProyecto`.
+    - Si ya estamos dentro de la carpeta con `dotnet run` es suficiente.
+- Esto debería de mostrar un *print*: `Hello World!`.
+- Además si miramos la estructura del proyecto se ha creado una carpeta llamada *bin* y otra *obj*.
+- Si navegamos por la carpeta de *bin* encontraréis el `.exe` que se ha generado al compilar.
+- Este `.exe` es un programa ultra sencillo que lo único que hace es el *print* de `Hello World`.
+- El motivo por el que se genera este programa es porque es el código de ejemplo que 
+  se genera siempre que creamos un nuevo proyecto de .NET.
+- Podéis inspeccionarlo en el archivo `Program.cs`.
