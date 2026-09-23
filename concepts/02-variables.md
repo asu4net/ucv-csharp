@@ -99,7 +99,7 @@ playerSkillPoints = 3;
 playerSkillPoints = playerSkillPoints - 2;
 ```
 Importante recordar que las líneas de código terminadas en punto y coma
-siempre van a ejecutarse de ARRIBA a abajo. Es decir primero creamos
+siempre van a ejecutarse de ARRIBA A ABAJO. Es decir, primero creamos
 `playerSkillPoints` y le damos un valor inicial de 8, luego escribimos
 en la variable el valor de 3, así que ha cambiado, y luego leemos el valor
 de la variable, le restamos 2, y el valor resultante de la expresión lo
