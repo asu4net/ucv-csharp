@@ -21,9 +21,9 @@ Abre la `búsqueda de Windows` y escribe `cmd`. Después, pulsa `Enter`. Esto de
 
 ## Crear el proyecto:
 
->> Sobre el formato de nombres de proyecto, archivos y clases:
-    - **Nunca** llamamos a un archivo `buenas tardes.cs` o a una clase `class eljugador`.
-    - **Siempre** `BuenasTardes.cs` o `class ElJugador`. 
-    - Este formato recibe el nombre de *UpperCamelCase* (por si os da curiosidad). 
+> Sobre el formato de nombres de proyecto, archivos y clases:
+     **Nunca** llamamos a un archivo `buenas tardes.cs` o a una clase `class eljugador`.
+     **Siempre** `BuenasTardes.cs` o `class ElJugador`. 
+     Este formato recibe el nombre de *UpperCamelCase* (por si os da curiosidad). 
 
 - Escribimos `dotnet new console -n NombreDelProyecto`.
