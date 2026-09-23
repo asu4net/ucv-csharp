@@ -1,8 +1,11 @@
-# What is .NET or dotnet
----
+# ¿Qué es .NET?
 
-- .NET is a bundle of software tools.
-- **The only thing we need to care** is that it has a **C# compiler**. 
-- **A C# interpreter** is a tool for:
-    - **Creating C# projects.** 
-    - **Transforming your C# projects (the code)** into an executable.
+- .NET es un conjunto de herramientas de Microsoft.
+- **Lo IMPORTANTE** es que puede crear y compilar proyectos de C#.
+- Un proyecto de C# es un conjunto de archivos de extensión `.cs`.
+- Estos archivos tendrán código C# que describe qué ha de hacer nuestro programa.
+- .NET puede *compilar* este proyecto.
+- *Compilar* es convertir nuestros archivos `.cs` con su código `C#` a un ejecutable.
+    ┌─────────────┐      ┌───────┐      ┌─────────────┐
+    │   C# Code   │ ───> │  .NET │ ───> │   game.exe  │
+    └─────────────┘      └───────┘      └─────────────┘

@@ -30,3 +30,5 @@ Abre la `búsqueda de Windows` y escribe `cmd`. Después, pulsa `Enter`. Esto de
 - Se nos creará una carpeta con ese nombre que contendrá dos archivos.
 - *Program.cs*: Los archivos de extensión `.cs` son archivos de código de C#.
 - *NombreDelProyecto.csproj*: Este es el archivo de proyecto de C#. No se toca. 
+
+## Compilar el proyecto.
