@@ -7,7 +7,8 @@
 - .NET puede *compilar* este proyecto.
 - *Compilar* es convertir nuestros archivos `.cs` con su código `C#` a un ejecutable.
 
-
+```text
     ┌─────────────┐      ┌───────┐      ┌─────────────┐
     │   C# Code   │ ───> │  .NET │ ───> │   game.exe  │
     └─────────────┘      └───────┘      └─────────────┘
+```
