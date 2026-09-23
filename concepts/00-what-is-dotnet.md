@@ -12,3 +12,7 @@
     │   C# Code   │ ───> │  .NET │ ───> │   game.exe  │
     └─────────────┘      └───────┘      └─────────────┘
 ```
+
+> Nota: Unity hace esto con nuestros scripts `.cs`, pero en vez de convertirlo
+  en un `.exe` lo convierte en un `.dll`. (Dynamic Link Library). Este archivo
+  luego es utilizado por tu `game.exe` para darle comportamiento a los GameObjects.
