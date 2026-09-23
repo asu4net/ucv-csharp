@@ -27,3 +27,6 @@ Abre la `búsqueda de Windows` y escribe `cmd`. Después, pulsa `Enter`. Esto de
      Este formato recibe el nombre de *UpperCamelCase* (por si os da curiosidad). 
 
 - Escribimos `dotnet new console -n NombreDelProyecto`.
+- Se nos creará una carpeta con ese nombre que contendrá dos archivos.
+- *Program.cs*: Los archivos de extensión `.cs` son archivos de código de C#.
+- *NombreDelProyecto.csproj*: Este es el archivo de proyecto de C#. No se toca. 
