@@ -13,10 +13,10 @@
     └─────────────┘      └───────┘      └─────────────┘
 ```
 
-> Nota: De igual manera Unity utiliza estas herramientas .NET para convertir nuestros 
+> Nota 1: De igual manera Unity utiliza estas herramientas .NET para convertir nuestros 
   scripts `.cs`, pero en vez de convertirlos en en un `.exe` los convierte en un `.dll`. 
   (Dynamic Link Library). Este archivo luego es utilizado por tu `game.exe` para darle 
   comportamiento a los `GameObjects`.
 
-> Nota: Como nostros vamos a practicar FUERA de Unity, los convertiremos en `.exe` para
+> Nota 2: Como nostros vamos a practicar FUERA de Unity, los convertiremos en `.exe` para
   poder ejecutar nuestro código como un juego.
