@@ -37,7 +37,7 @@ Abre la `búsqueda de Windows` y escribe `cmd`. Después, pulsa `Enter`. Esto de
     - Si ya estamos dentro de la carpeta con `dotnet run` es suficiente.
 - Esto debería de mostrar un *print*: `Hello World!`.
 - Además si miramos la estructura del proyecto se ha creado una carpeta llamada *bin* y otra *obj*.
-- Si navegamos por la carpeta de *bin* encontraréis el `.exe` que se ha generado al compilar.
+- Si navegamos por las subcarpetas dentro de *bin* encontraréis el `.exe` que se ha generado al compilar.
 - Este `.exe` es un programa ultra sencillo que lo único que hace es el *print* de `Hello World`.
 - El motivo por el que se genera este programa es porque es el código de ejemplo que 
   se genera siempre que creamos un nuevo proyecto de .NET.
