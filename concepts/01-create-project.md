@@ -1,5 +1,4 @@
 # Create C# project
---- 
 
 0. Open `windows search` and type `cmd`, thenk press `enter`. This should open a black terminal. 
 1. Check if .NET is intalled: 
