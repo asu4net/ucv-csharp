@@ -1,7 +1,11 @@
 # Variables
 
 Para practicar las variables vamos a crear un nuevo proyecto, puedes
-llamarlo 01-Variables, si no tienes mucha imaginación.
+llamarlo 01-Variables. Luego entra a `Program.cs` y ve escribiendo lo
+que vas aprendiendo. 
+
+Siempre que escribas algo llama a `dotnet run` para
+compilar y ejecutar tu proyecto. 
 
 ## ¿Qué es una variable?
 
