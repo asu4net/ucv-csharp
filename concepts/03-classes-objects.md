@@ -489,6 +489,8 @@ class Enemy
 Enemy podría usar este puntero para leer la posición del player y seguirle
 por la escena.
 
+## Reflexión final
+
 Todo esto que hemos visto son las bases de la Programación Orientada a Objetos, OOP, o como me gusta
 llamarla, OOPs. ¿Por qué "Ups"? Porque todo lo que trae no son facilidades. Como podéis apreciar 
 introduce toda una capa de complejidad, muchos conceptos y comportamiento implícito. Sin embargo, es
