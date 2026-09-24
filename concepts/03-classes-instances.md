@@ -1,4 +1,4 @@
-# Classes and Instances
+# Classes and Objects
 
 Para practicar las classes vamos a crear un nuevo proyecto, puedes
 llamarlo 03-Classes. Luego entra a `Program.cs` y ve escribiendo lo
@@ -59,18 +59,139 @@ public class Character
   `public` delante de las variables significa que **fuera de la clase**
   podrás **leer** y **escribir** sus variables.
 
-## Cómo crear una instancia/objeto
+## Variables creadas a partir de una clase.
 
 Hasta aquí hemos creado la clase, pero NO la hemos usado. Para ello
 tendremos que crear una variable usando como **tipo** el nombre de 
 la clase. 
 
-Las variables creadas a partir de clases se 
-denominan instancias (objetos).
+```cs
+Character player; // El valor por defecto es null.
+```
+
+Al contrario que las variables de tipo básico (int, float, char, bool, etc...)
+una variable creada a partir del tipo de una clase tiene un valor por defecto
+"nulo" al que no le podemos dar utilidad. Un `int`, por ejemplo, tiene valor 
+por defecto 0, pero esto sigue siendo un número. Podemos sumarle otro número,
+restarlo, multiplicarlo. 
+
+`null` sin embargo, sólo nos indica si la variable de clase está vacía. Por ejemplo:
+
+```
+if (player != null)
+{
+    // Do something.
+}
+```
+A continuación veremos cómo darle un valor a este tipo de variables.
+
+## Cómo crear un objeto
+
+Cuando creamos una variable de tipo básico, se reserva un espacio en la memoria
+RAM física de nuestro ordenador para almacenar su valor. Le hayamos dado uno
+nosotros o esté usando el que tiene por defecto.
+
+Sin embargo cuando creamos una variable a partir de una clase, **sólo** va a resevarse
+espacio físico para ella a partir de que le demos un valor. Si no lo hacemos
+es `null`, como hemos visto en el apartado anterior. 
+
+Para darle valor, igual que una variable de tipo básico hemos 
+de escribir algo a la derecha del símbolo igual `=`. Concretamente 
+hemos de usar la palabra reservada `new`, seguida del nombre de la clase 
+y dos paréntesis, como si estuvieramos llamando a una función.
 
 ```cs
-// Objeto 1 
 Character player = new Character();
-// Objeto 2
+```
+
+Cuando le damos valor a una variable de clase se reserva memoria
+física suficiente para almacenar todas sus variables. Esto es lo 
+que se conoce como un *objeto*. Vamos a ver el siguiente código:
+
+```cs
+int someNumber   = 8;
+Character player = new Character();
+string someText  = "Buenas tardes.";
+```
+Esto, equivale, en memoria física, a lo siguiente:
+
+```
+-- Memoria RAM --
+------------------------------------------
+someNumber          -> 8
+------------------------------------------
+player:
+    name            -> ""
+    lifeCharges     -> 0
+    life            -> 0.0f
+    mana            -> 0.0f
+------------------------------------------
+someText            -> "Buenas tardes"
+------------------------------------------
+```
+> Note: Fijaros en que todas estas variables de `player` 
+  quedan inicializadas a sus valores por defecto.
+
+¿Y qué pasa si creamos otro objeto de tipo `Character`?
+
+```cs
+int someNumber = 8;
+Character player = new Character();
+string someText = "Buenas tardes.";
 Character enemy = new Character();
 ```
+En memoria sería lo siguiente:
+
+```
+-- Memoria RAM --
+------------------------------------------
+someNumber          -> 8
+------------------------------------------
+player:
+    name            -> ""
+    lifeCharges     -> 0
+    life            -> 0.0f
+    mana            -> 0.0f
+------------------------------------------
+someText            -> "Buenas tardes"
+------------------------------------------
+enemy:
+    name            -> ""
+    lifeCharges     -> 0
+    life            -> 0.0f
+    mana            -> 0.0f
+------------------------------------------
+```
+Vamos a hacer un poco de recapitulación:
+
+Como podemos apreciar, un objeto es *una instancia de una clase*.
+Cuando creamos una clase, sólo estamos definiendo una plantilla
+que describe qué variables tendrán los objetos de dicha clase:
+
+```cs
+public class Weapon
+{
+    public string name;
+    public float damage;
+}
+```
+De una clase podemos crear los objetos que queramos:
+```cs
+Weapon sword = new Weapon();
+Weapon axe = new Weapon();
+```
+Y estos objetos a su vez resevarán espacio físico para sus respectivas variables:
+```
+-- Memoria RAM --
+------------------------------------------
+sword:
+    name   -> ""
+    damage -> 0
+------------------------------------------
+axe:
+    name   -> ""
+    damage -> 0
+------------------------------------------
+```
+## Cómo usar un objeto
+
