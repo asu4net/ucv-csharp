@@ -17,12 +17,12 @@ Abre la `búsqueda de Windows` y escribe `cmd`. Después, pulsa `Enter`. Esto de
   proyectos de C# es la del SDK.
 
 - En la terminal, escribe `dotnet new`. Si el SDK de .NET no está instalado, no reconocerá el comando.
-- En caso de que sí has terminado, ve al siguiente apartado :)
+- En caso de que sí, has terminado, ve al siguiente apartado :)
 - Si **NO** está instalado, ejecuta `winget install Microsoft.DotNet.SDK.10`
 - Cierra la terminal y vuelve a abrirla.
 - De nuevo comprueba si `dotnet new` se reconoce como comando.
-- En caso de que sí has terminado, ve al siguiente apartado :)
-- En caso de que no quizás es porque se está usando la versión sin SDK.
+- En caso de que sí, has terminado, ve al siguiente apartado :)
+- En caso de que no, quizás es porque se está usando la versión sin SDK.
 - Para solucionar esto abre `búsqueda de Windows` y escribe `variables de entorno`.
 - Una vez ahí ve a `variables de sistema` y dentro verás que hay dos de `dotnet`.
     - Una de ellas es la instalación del `dotnet` con SDK y otra sin. 
