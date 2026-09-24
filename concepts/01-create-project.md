@@ -21,7 +21,7 @@ Abre la `búsqueda de Windows` y escribe `cmd`. Después, pulsa `Enter`. Esto de
 - Si **NO** está instalado, ejecuta `winget install Microsoft.DotNet.SDK.10`
 - Cierra la terminal y vuelve a abrirla.
 - De nuevo comprueba si `dotnet new` se reconoce como comando.
-- - En caso de que sí has terminado, ve al siguiente apartado :)
+- En caso de que sí has terminado, ve al siguiente apartado :)
 - En caso de que no quizás es porque se está usando la versión sin SDK.
 - Para solucionar esto abre `búsqueda de Windows` y escribe `variables de entorno`.
 - Una vez ahí ve a `variables de sistema` y dentro verás que hay dos de `dotnet`.
