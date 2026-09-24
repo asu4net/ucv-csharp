@@ -321,7 +321,24 @@ electroWhatever.Initialize("Electro Stuff", 1, 5);
 ```
 Haciendo uso de un método hemos encapsulado una tarea repetitiva y tediosa
 en una línea mucho más simple y legible para quien esté leyendo el código
-de nuestro juego. Además, este método **fuerza** a pasar estos tres parámetros
+de nuestro juego. 
+
+Además, este método **fuerza** a pasar estos tres parámetros
 a la función. Si no lo hacemos el juego no compilará. Esto evita que se nos
 olvide inicializar alguna variable que es **necesario** que tenga un valor inicial.
-Nos evita olvidar darle un nombre al nuevo hechizo que estamos creando, por ejemplo.
+
+Por ejemplo:
+
+```cs
+// COMPILA
+Spell fireBall = new Spell();
+fireBall.area = 3.0f;
+fireBall.hits = 1;
+// Hemos olvidado inicializar el nombre.
+```
+
+```cs
+// NO COMPILA
+Spell fireBall = new Spell();
+fireBall.Initialize(3.0f, 1); // Hemos olvidado pasar el nombre a la función.
+```
