@@ -265,7 +265,7 @@ axe.Upgrade(100.0f);  // Aquí el "this" equivale a axe.
 Habiendo visto esto, podemos usarlo en nuestro favor, para ahorrar algo
 de código en el momento de inicializar variables. Por ejemplo, si tenemos algo así:
 
-```
+```cs
 public class Spell
 {
     public string name;
@@ -274,7 +274,7 @@ public class Spell
 }
 ```
 Escribir este código por cada hechizo que creemos puede ser tedioso:
-```
+```cs
 Spell fireBall = new Spell();
 fireBall.name = "Fire Ball";
 fireBall.area = 3.0f;
@@ -291,7 +291,7 @@ electroWhatever.area = 1;
 electroWhatever.hits = 5;
 ```
 Sin embargo, si creamos un método:
-```
+```cs
 public class Spell
 {
     public string name;
@@ -309,7 +309,7 @@ public class Spell
 }
 ```
 Luego en nuestro juego es mucho más sencillo:
-```
+```cs
 Spell fireBall = new Spell();
 fireBall.Initialize("Fire Ball", 3.0f, 1);
 
