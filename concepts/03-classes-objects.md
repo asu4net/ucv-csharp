@@ -342,3 +342,44 @@ fireBall.hits = 1;
 Spell fireBall = new Spell();
 fireBall.Initialize(3.0f, 1); // Hemos olvidado pasar el nombre a la función.
 ```
+
+## Constructores
+
+Usando métodos ahorramos tareas repetitivas, como la de inicialización. Sin embargo,
+volviendo al ejemplo anterior, seguimos teniendo un problema. Podemos olvidar llamar
+a la función `Initialize` justo después de crear el objeto. ¿Tenemos alguna forma
+de **forzar** la inicialización de nuestras variables? 
+
+La respuesta es sí, y es convirtiendo nuestra función de `Initialize` en un *constructor*.
+```cs
+public class Spell
+{
+    public string name;
+    public float area;
+    public int hits;
+
+    // Convertimos la función de Initialize en un constructor.
+    public Spell(string name, float area, int hits)
+    {
+        this.name = name;
+        this.area = area;
+        this.hits = hits;
+    }
+}
+```
+Y ahora si hacemos:
+```cs
+Spell fireBall = new Spell();
+```
+Este código ya **NO COMPILA**, estamos forzados a pasar
+esos tres parámetros en la llamada del `new`, de la siguiente
+manera:
+```cs
+Spell fireBall = new Spell("Fire Ball", 3.0f, 1);
+```
+Podemos concluir que el *constructor* es un **método especial** que podemos
+añadir **opcionalmente** a una clase para **forzar** la inicialización de una
+serie de variables de la clase.
+
+> No tenemos por qué forzar la inicialización de todas, solo hemos de
+  especificar en el constructor los parámetros que queramos inicializar.
