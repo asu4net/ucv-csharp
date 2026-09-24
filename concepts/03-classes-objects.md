@@ -54,7 +54,10 @@ public class Character
     public float mana;
 }
 ```
-> Nota: `public` usado delante de una clase significa que desde
+> Nota 1: SIEMPRE escribir las clases en SU PROPIO ARCHIVO, por ejemplo
+  la clase `Character` debería ir en un archivo llamado `Character.cs`.
+
+> Nota 2: `public` usado delante de una clase significa que desde
   otros archivos podrá usarse el *tipo* de la clase. Mientras que
   `public` delante de las variables significa que **fuera de la clase**
   podrás **leer** y **escribir** sus variables.
@@ -216,5 +219,42 @@ modificar el `axe` también, hemos de acceder a sus variables, como hicimos con 
 
 ```cs
 axe.name = "Quebranta huesos";
-axe.damage = 100.0f;
+axe.damage = axe.damage + damageUpgrade;
 ```
+## Funciones en una clase
+
+Para reutilizar operaciones comunes que podamos llevar a cabo sobre los objetos de una 
+misma clase podemos usar *métodos*. Los *métodos* son funciones que pueden llamarse 
+sobre un objeto. 
+
+Volviendo al ejemplo de la espada y el hacha, vamos a crear un método que ponga
+en común todo el asunto de la mejora en el yunke:
+
+```cs
+public class Weapon
+{
+    public string name;
+    public float damage;
+    
+    // Método upgrade, recibe como parámetro de entrada
+    // el daño que le añadiremos al arma.
+    public void Upgrade(float damageUpgrade)
+    {
+        this.damage = this.damage + damageUpgrade;
+    }
+}
+```
+> Nota: `this` significa literalmente "este objeto". Como estamos escribiendo
+  código en la clase, no tenemos definida ninguna instancia, así que usamos la
+  esta palabra para acceder a las variables propias de la clase.`
+
+Luego, en nuestro juego ficticio, podemos usar este método sobre los objetos
+que queramos, siempre que pertenezcan a la clase `Weapon`:
+```cs
+sword.Upgrade(10.0f); // Aquí el "this" equivale a sword.
+axe.Upgrade(100.0f);  // Aquí el "this" equivale a axe.
+```
+> Nota: NO es recomendable crear un método para una sola línea de código,
+  para este ejemplo lo hemos hecho porque para simplificar la explicación
+  pero normalmente quieres hacer esto para operaciones más complejas que
+  quieras reutilizar en una misma clase.
