@@ -474,3 +474,26 @@ Y luego podríamos llamar a `Copy` desde nuestro juego.
 Spell fireBall = new Spell("Fire Ball", 3.0f, 1);
 Spell poisonArea = fireBall.Copy();
 ```
+Esta característica de los objetos nos va a permitir guardar punteros
+a objetos creados en cualquier punto de nuestro código. Un caso de uso
+muy típico podría ser un enemigo que ha de seguir al jugador.
+
+```cs
+class Enemy
+{
+    public string name;
+    public float damage;
+    public Player target; // Puntero al Player creado en otro sitio.
+}
+```
+Enemy podría usar este puntero para leer la posición del player y seguirle
+por la escena.
+
+Todo esto que hemos visto son las bases de la Programación Orientada a Objetos, OOP, o como me gusta
+llamarla, OOPs. ¿Por qué "Ups"? Porque todo lo que trae no son facilidades. Como podéis apreciar 
+introduce toda una capa de complejidad, muchos conceptos y comportamiento implícito. Sin embargo, es
+el método más utilizado (no el único) en la industria del software, y por tanto, también es estándar
+en la programación de videojuegos. Así que es extremedamante importante que lo entendáis, repaséis y
+practiquéis hasta que os resulte trivial. Y ya en el futuro, daros cuenta de los problemas que trae
+consigo en grandes producciones. Más adelante veremos otros conceptos relacionados con OOP, como la herencia
+y el polimorfismo. 
