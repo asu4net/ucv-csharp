@@ -1,15 +1,32 @@
 # Crear un proyecto de C#
 
+.NET o `dotnet`, para crear proyectos de C#, es un software que puede utilizarse desde
+la terminal de Windows. La terminal es simplemente una forma de usar el sistema operativo
+sin interfaz gráfica. Podemos hacer las mismas tareas que normalmente hacemos moviendo el ratón 
+y haciendo click en elementos de GUI, la diferencia clave es que en la terminal las hacemos escribiendo
+comandos.
+
 ## Abrir la terminal:
 
 Abre la `búsqueda de Windows` y escribe `cmd`. Después, pulsa `Enter`. Esto debería abrir una terminal negra.
 
-## Comprobar si .NET está instalado:
+## Comprobar si el SDK de .NET está instalado:
 
-- En la terminal, escribe `dotnet --info`. Esto debería mostrar el número de versión si .NET está instalado.
+> Nota: SDK significa Software Development Kit, o kit de desarrollo.
+  la versión de `dotnet` que necesitamos para poder crear y programar
+  proyectos de C# es la del SDK.
+
+- En la terminal, escribe `dotnet new`. Si el SDK de .NET no está instalado, no reconocerá el comando.
 - Si **NO** está instalado, ejecuta `winget install Microsoft.DotNet.SDK.10`
 - Cierra la terminal y vuelve a abrirla.
-- Repite `dotnet --version` para comprobar que se ha instalado correctamente.
+- De nuevo comprueba si `dotnet new` funciona.
+- En caso de que no quizás es porque se está usando la versión sin SDK.
+- Para solucionar esto abre `búsqueda de Windows` y escribe `variables de entorno`.
+- Una vez ahí ve a `variables de sistema` y dentro verás que hay dos de `dotnet`.
+    - Una de ellas es la instalación del `dotnet` con SDK y otra sin. 
+- Usando los botones de `mover arriba` intercambia sus posiciones.
+- Cierra **TODAS** las ventanas de terminal y abre una nueva.
+- Esta vez el comando `dotnet new` debería de funcionar definitivamente.
 
 ## Nos preparamos para crear el proyecto:
 
