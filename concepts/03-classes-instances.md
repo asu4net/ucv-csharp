@@ -195,3 +195,26 @@ axe:
 ```
 ## Cómo usar un objeto
 
+Para acceder a las variables de un objeto usamos el nombre del objeto
+(del **objeto**, no de la clase), seguido del operador punto `.` y este,
+a su vez, seguido del nombre de la variable a la que queremos acceder. A
+partir de aquí, se aplican todas las normas que conocemos, de *leer* y *escribir*
+en variables. 
+
+Por ejemplo, si en nuestro juego ficticio tenemos un yunke, que mejora los objetos
+creados a partir de la clase `Weapon`, y en ese yunke, colocamos el objeto `sword`:
+
+```cs
+float damageUpgrade = 10.0f;
+// Lectura y escritura de la variable damage, del objeto sword.
+sword.damage = sword.damage + damageUpgrade;
+```
+Como es lógico para este ejemplo, el objeto `axe`, que estaba inicializado a sus valores
+por defecto, permanece con el valor `damage` a `0`. Son **dos instancias distintas** de la 
+misma clase. Y en consecuencia, cada una tiene **su propio almacenamiento**. Si queremos 
+modificar el `axe` también, hemos de acceder a sus variables, como hicimos con sword:
+
+```cs
+axe.name = "Quebranta huesos";
+axe.damage = 100.0f;
+```
