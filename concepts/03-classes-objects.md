@@ -254,7 +254,74 @@ que queramos, siempre que pertenezcan a la clase `Weapon`:
 sword.Upgrade(10.0f); // Aquí el "this" equivale a sword.
 axe.Upgrade(100.0f);  // Aquí el "this" equivale a axe.
 ```
-> Nota: NO es recomendable crear un método para una sola línea de código,
+> Nota 1: NO es recomendable crear un método para una sola línea de código,
   para este ejemplo lo hemos hecho porque para simplificar la explicación
-  pero normalmente quieres hacer esto para operaciones más complejas que
-  quieras reutilizar en una misma clase.
+  pero normalmente quieres hacer esto para operaciones más complejas.
+
+> Nota 2: No hay límite para la cantidad de métodos que podemos crear dentro
+  de una clase, en juegos complejos una clase suele tener múchos métodos que
+  encapsulan las cosas que pueden hacerse con las clase.
+
+Habiendo visto esto, podemos usarlo en nuestro favor, para ahorrar algo
+de código en el momento de inicializar variables. Por ejemplo, si tenemos algo así:
+
+```
+public class Spell
+{
+    public string name;
+    public float area;
+    public int hits;
+}
+```
+Escribir este código por cada hechizo que creemos puede ser tedioso:
+```
+Spell fireBall = new Spell();
+fireBall.name = "Fire Ball";
+fireBall.area = 3.0f;
+fireBall.hits = 1;
+
+Spell poisonArea = new Spell();
+poisonArea.name = "Poison Area";
+poisonArea.area = 20.0f;
+poisonArea.hits = 10;
+
+Spell electroWhatever = new Spell();
+electroWhatever.name = "Electro Stuff";
+electroWhatever.area = 1;
+electroWhatever.hits = 5;
+```
+Sin embargo, si creamos un método:
+```
+public class Spell
+{
+    public string name;
+    public float area;
+    public int hits;
+
+    // Método Initialize que fuerza a inicializar las variables
+    // de nuestra clase.
+    void Initialize(string name, float area, int hits)
+    {
+        this.name = name;
+        this.area = area;
+        this.hits = hits;
+    }
+}
+```
+Luego en nuestro juego es mucho más sencillo:
+```
+Spell fireBall = new Spell();
+fireBall.Initialize("Fire Ball", 3.0f, 1);
+
+Spell poisonArea = new Spell();
+poisonArea.Initialize("Poison Area", 20.0f, 10);
+
+Spell electroWhatever = new Spell();
+electroWhatever.Initialize("Electro Stuff", 1, 5);
+```
+Haciendo uso de un método hemos encapsulado una tarea repetitiva y tediosa
+en una línea mucho más simple y legible para quien esté leyendo el código
+de nuestro juego. Además, este método **fuerza** a pasar estos tres parámetros
+a la función. Si no lo hacemos el juego no compilará. Esto evita que se nos
+olvide inicializar alguna variable que es **necesario** que tenga un valor inicial.
+Nos evita olvidar darle un nombre al nuevo hechizo que estamos creando, por ejemplo.
