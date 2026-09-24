@@ -389,3 +389,88 @@ serie de variables de la clase.
   clases de los componentes cuando pulsamos en `Add Component` en el editor. O de llamar
   al `new` de la clase `GameObject` cuando pulsamos `Create Empty` en la jerarquía de la 
   escena.
+
+## Las variables de clase son *Punteros*
+
+Supongamos este caso:
+
+```cs
+int a = 3;
+int b = a;
+b = 5;
+Console.WriteLine(a); // Printea: 3
+```
+
+¿Hasta aquí nada raro verdad?
+- Creamos variable `a` y le asignamos el valor de `3`.
+- Creamos variable `b` y **copiamos** en `b` el valor que leemos de `a`.
+    - Luego `b` es igual a `3`.
+- Escribimos en `b` el valor de `5`.
+    - Luego `b` es igual a `5`.
+- Printeamos el valor de `a`, que ha quedado sin modificar y nos devuelve `3`.
+
+Todo lógico y esperable. 
+
+¿Qué sucede si hacemos lo mismo con variables cuyo tipo es una clase?
+
+Vamos a suponer queremos que el spell de *Poison Area* tenga los mismos
+valores que el de *Fire Ball* excepto por el nombre. Con lo que sabemos
+hasta ahora el camino más sencillo sería este.
+```cs
+Spell fireBall = new Spell("Fire Ball", 3.0f, 1);
+Spell poisonArea = fireBall;
+poisonArea.name = "Poison Area";
+```
+Esto compila, y no da ningún error. Pero vamos a probar printear el nombre
+del objeto `fireBall` después de esta operación:
+```cs
+Console.WriteLine(fireBall.name); // Printea: Poison Area
+```
+De alguna manera hemos modificado el objeto `fireBall` **a través** de la variable
+`poisonArea`. 
+
+El motivo de esto es sencillo. **TODAS** las variables cuyo tipo es una clase, son
+*punteros* a la memoria de un objeto, **SIEMPRE**. De modo que si haciendo esto:
+```cs
+poisonArea = fireBall;
+```
+**Copias** el *puntero* `fireBall` en `poisonArea`. De modo que **ambas** variables son
+son punteros que **apuntan** a la misma memoria. En este ejemplo, la memoria del spell
+*Fire Ball*. 
+
+El **único momento** donde se CREA EL OBJETO es cuando se lleva a cabo la
+llamada del `new`, aquí:
+```cs
+Spell fireBall = new Spell("Fire Ball", 3.0f, 1);
+```
+Si quisiéramos literalmente copiar las variables de uno en el otro, tendríamos que
+hacerlo **una por una** manualmente o con un *método*. Por ejemplo:
+```cs
+public class Spell
+{
+    public string name;
+    public float area;
+    public int hits;
+
+    // Constructor
+    public Spell(string name, float area, int hits)
+    {
+        this.name = name;
+        this.area = area;
+        this.hits = hits;
+    }
+
+    // Método que crea un nuevo spell, con los datos del actual
+    // y lo devuelve el puntero como parámetro de salida.
+    public Spell Copy()
+    {
+        Spell copy = new Spell(this.name, this.area, this.hits);
+        return copy;
+    }
+}
+```
+Y luego podríamos llamar a `Copy` desde nuestro juego.
+```cs
+Spell fireBall = new Spell("Fire Ball", 3.0f, 1);
+Spell poisonArea = fireBall.Copy();
+```
