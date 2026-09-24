@@ -381,5 +381,11 @@ Podemos concluir que el *constructor* es un **método especial** que podemos
 añadir **opcionalmente** a una clase para **forzar** la inicialización de una
 serie de variables de la clase.
 
-> No tenemos por qué forzar la inicialización de todas, solo hemos de
+> Nota 1: No tenemos por qué forzar la inicialización de todas, solo hemos de
   especificar en el constructor los parámetros que queramos inicializar.
+
+> Nota 2: En Unity la mayor parte del tiempo NO vamos a crear manualmente instancias
+  de clases, ni definit constructores. El motor ya se encarga de llamar al `new` de las
+  clases de los componentes cuando pulsamos en `Add Component` en el editor. O de llamar
+  al new de la clase `GameObject` cuando pulsamos `Create Empty` en la jerarquía de la 
+  escena.
