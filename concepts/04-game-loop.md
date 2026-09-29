@@ -163,6 +163,8 @@ Es el comportamiento esperado, ya que después de `InitWindow` nuestro
 programa termina. Para mantenerla abierta necesitamos algo **mantenga
 indefinidamente** nuestro programa sin terminar:
 
+## Game Loop (El Bucle de Juego)
+
 ```cs
 // Usamos un bucle infinito para que no se cierre la ventana.
 while (true) {}
