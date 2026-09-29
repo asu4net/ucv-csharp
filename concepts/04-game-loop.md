@@ -32,27 +32,27 @@ gráfica u otra:
 
 Estas son las APIs gráficas más utilizadas:
 
-- DirectX11
+- ***DirectX11***
     - Plataforma/s: Windows.
     - Dificultad: Normal.
     - Control: Medio.
 
-- DirectX12
+- ***DirectX12***
     - Plataforma/s: Windows.
     - Dificultad: Difícil.
     - Control: Alto.
 
-- OpenGL
+- ***OpenGL***
     - Plataforma/s: Todas excepto MacOS. (Versiones antiguas siguen funcionando en MacOS)
     - Dificultad: Sencillo.
     - Control: Bajo.
 
-- Vulkan
+- ***Vulkan***
     - Plataforma/s: Todas excepto MacOS.
     - Dificultad: Difícil.
     - Control: Alto.
 
-- Metal
+- ***Metal***
     - Plataforma/s: MacOS.
     - Dificultad: Normal.
     - Control: Medio-Alto.
@@ -110,7 +110,7 @@ Una vez añadido el package **podemos empezar a llamar funciones
 de Raylib**.
 
 Cabe destacar que Raylib **NO usa métodos** porque originariamente 
-está escrita en el lenguaje C. C **no es Orientado a Objetos**.
+está escrita en el lenguaje C, el cual **NO es Orientado a Objetos**.
 
 Recordemos que un método es una función que se llama sobre la
 instancia de una clase. 
@@ -129,9 +129,9 @@ Ejemplo de llamada a una función estática:
 ```cs
 Console.WriteLine("Buenas!");
 ```
-> Nota: Recordemos que aquí `Console` **NO es un objeto**, básicamente se usa
-  como prefijo, para facilitarnos saber a qué concepto va relacionada la función.
-  (En este caso la consola).
+> Nota: Recordemos que `Console` **NO es un objeto**, básicamente se usa como 
+  prefijo, para facilitarnos saber a qué concepto va relacionada la función.
+  (En este caso: la consola).
 
 Las funciones de Raylib siempre usarán el prefijo de `Raylib.`. Esto es conveniente
 ya que con un mero vistazo podemos intuir cuáles son las funciones de Raylib, es
