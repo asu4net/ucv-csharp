@@ -187,3 +187,65 @@ y cuando Raylib quiera mantener la ventana abierta. Si Raylib detecta que
 hemos intentado cerrarla, la función `WindowShouldClose` retornará `true`.
 
 ## Empezamos a pintar
+
+Para pintar usaremos más funciones de Raylib. También necesitaremos crear
+una cámara, para este ejemplo, un objeto de la clase `Camera2D`. Aunque
+Raylib no haga uso de métodos, constructores o destructores sí que tiene
+objetos, como la cámara. Que C no sea Orientado a Objetos, no significa que
+no los tenga, simplemente que no pueden tener métodos ni comportamiento 
+implícito, son sólo contenedores de datos.
+
+Haciendo uso de la cámara y las funciones de `BeginMode2D`, `EndMode2D` podemos
+a empezar a pintar rectángulos y sprites de la siguiente manera:
+
+```cs
+using Raylib_cs;
+using System.Numerics; // Para usar Vectores.
+
+Raylib.InitWindow(1280, 720, "Mi ventana");
+
+// Creamos un objeto cámara que determina reglas con las
+// que van a pintarse todas las figuras.
+Camera2D camera = new Camera2D();
+
+// Damos un offset a la cámara para que el origen de 
+// coordenadas se situe en el centro de la pantalla.
+camera.Offset = new Vector2(1280f /2f, 720f/2f);
+
+// Damos un zoom a la cámara para definir los píxeles por
+// unidad. Un zoom de 100 significa que cada unidad (metro)
+// va a equivaler a 100 píxeles.
+camera.Zoom = 100;
+
+while (Raylib.WindowShouldClose() == false)
+{
+    Raylib.BeginDrawing();
+
+    // Iniciamos el modo 2D, pasando la cámara. Los valores
+    // de la cámara se usarán para ajustar el pintado de cada
+    // objeto que dibujemos.
+    Raylib.BeginMode2D(camera);
+
+    // Pintamos un rectángulo en el orígen.
+    Raylib.DrawRectangle(0, 0, 1, 1, Color.White);
+    // Pintamos un segundo rectángulo, una unidad a la derecha.
+    Raylib.DrawRectangle(1, 0, 1, 1, Color.Red);
+
+    // A partir del EndMode2D dejan de aplicarse los valores de la
+    // cámara, que pasamos en el BeginMode2D, si siguieramos pintando
+    // los objetos ya no se verían, por ejemplo, con el Zoom que elegimos.
+    Raylib.EndMode2D();
+
+    // Cuando se llama al EndDrawing todas las figuras sobre las
+    // que hemos llamado Draw se envían a la targeta gráfica, donde
+    // OpenGL las rasteriza y muestra los píxeles resultantes en la
+    // pantalla.
+    Raylib.EndDrawing();
+}
+```
+A partir de aquí tenemos toda la información necesaria para empezar a desarrollar. 
+Tenemos un loop de juego, que mantiene una ventana abierta y cada vuelta envía unas
+figuras a la tarjeta gráfica, que se encarga de convertir en un frame.
+
+Ahora imaginemos que queremos mover uno de los rectángulos. Podemos ir modificando su
+posición en cada vuelta del bucle.
