@@ -19,7 +19,7 @@ while (Raylib.WindowShouldClose() == false)
     Raylib.BeginMode2D(camera);
 
     Raylib.DrawRectangleV(whiteRectanglePosition, new Vector2(1, 1), Color.White);
-    Raylib.DrawRectangle(1, 0, 1, 1, Color.Red);
+    Raylib.DrawRectangleV(new Vector2(0, 0), new Vector2(1, 1), Color.Red);
 
     Raylib.EndMode2D();
     Raylib.EndDrawing();

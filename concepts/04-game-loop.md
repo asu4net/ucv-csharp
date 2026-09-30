@@ -226,10 +226,10 @@ while (Raylib.WindowShouldClose() == false)
     // objeto que dibujemos.
     Raylib.BeginMode2D(camera);
 
-    // Pintamos un rectángulo en el orígen.
-    Raylib.DrawRectangle(0, 0, 1, 1, Color.White);
+    // Pintamos un rectángulo en el orígen con un tamaño de 1 unidad.
+    Raylib.DrawRectangleV(new Vector2(0, 0), new Vector2(1, 1), Color.White);
     // Pintamos un segundo rectángulo, una unidad a la derecha.
-    Raylib.DrawRectangle(1, 0, 1, 1, Color.Red);
+    Raylib.DrawRectangleV(new Vector2(1, 0), new Vector2(1, 1), Color.Red);
 
     // A partir del EndMode2D dejan de aplicarse los valores de la
     // cámara, que pasamos en el BeginMode2D, si siguieramos pintando
@@ -249,3 +249,34 @@ figuras a la tarjeta gráfica, que se encarga de convertir en un frame.
 
 Ahora imaginemos que queremos mover uno de los rectángulos. Podemos ir modificando su
 posición en cada vuelta del bucle.
+
+Primero definimos variables de velocidad y posición.
+
+```cs
+float whiteRectangleSpeed = 2;
+Vector2 whiteRectanglePosition = new Vector2();
+```
+
+Luego en nuestro *main loop* **ANTES de pintar** procesamos la lógica del juego.
+En este caso la única lógica que tenemos es el cálculo de la posición del rectángulo
+en el siguiente frame:
+
+```cs
+float deltaTime = Raylib.GetFrameTime();
+whiteRectanglePosition += new Vector2(1, 0) * whiteRectangleSpeed * deltaTime;
+```
+Por último una vez calculada la usamos para pintar el rectángulo.
+
+```cs
+Raylib.DrawRectangleV(whiteRectanglePosition, new Vector2(1, 1), Color.White);
+```
+Si hacemos esto y esto ejecutamos, veremos que el rectángulo se mueve, pero todo su
+recorrido queda pintado con el mismo color y forma del rectángulo. Esto es esperable.
+OpenGL usa dos tablas de píxeles para pintar: el *back buffer* y el *front buffer*.
+
+Colorea los píxeles de la tabla del *back buffer* mientras está mostrando en nuestro
+monitor el *front buffer*. Cuando hemos terminado de pintar, todos los píxeles del
+*back buffer* se copian a la tabla del *front buffer*, mostrando así el nuevo frame.
+
+Pero claro, ¿Qué sucede si no limpiamos nunca los píxeles pintados en el *back buffer*?
+Que los píxeles viejos siempre están copiándose al *front buffer*.
