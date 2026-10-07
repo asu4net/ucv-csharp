@@ -62,9 +62,9 @@ Pokemon pokemonB = charizard;
 
 while(!gameFinished)
 {
-   Console.WriteLine("Choose an attack:") 
+   Console.WriteLine("Choose an attack:");
    int attackIndex = Convert.ToInt32(Console.ReadLine());
-   Attack selectedAttack = pokemonA.attacks[attackIndex]
+   Attack selectedAttack = pokemonA.attacks[attackIndex];
    Console.WriteLine("Attack choosed is: " + selectedAttack.name);
    pokemonB.life -= selectedAttack.damage;
    Console.WriteLine(pokemonB.name + " was hitted by " + pokemonA.name);
