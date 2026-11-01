@@ -29,7 +29,7 @@ comunes a toda la partida que nuestro juego va a necesitar gestionar. Cosas como
 - Crear al jugador.
 - Mostrar la pantalla de GameOver.
 
-Si por cada una de esas tareas tenemos que crear un GameObject y una clase
+Si por cada una de esas tareas tenemos que crear un GameObject y una clase,
 a la larga vamos a tener problemas en recordar cuáles son y cómo acceder
 a estas instancias desde otras clases. 
 
